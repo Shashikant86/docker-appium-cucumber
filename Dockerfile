@@ -54,7 +54,7 @@ RUN npm install -g appium@${appium_version}
 
 ENV phantomjs_version 1.9.7
 #Install PhantomJS
-RUN npm install -g phantomjs@${phantomjs_version}
+RUN npm install -g phantomjs
 
 ADD files/insecure_shared_adbkey /home/jenkins/.android/adbkey
 ADD files/insecure_shared_adbkey.pub /home/jenkins/.android/adbkey.pub
