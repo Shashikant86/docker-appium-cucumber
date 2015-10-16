@@ -16,12 +16,14 @@ RUN \curl -L https://get.rvm.io | bash -s stable
 RUN /bin/bash -l -c "rvm requirements"
 RUN /bin/bash -l -c "rvm install 2.0"
 RUN /bin/bash -l -c "gem install bundler --no-ri --no-rdoc"
-RUN /bin/bash -l -c "gem install bddfire -v 1.9.6 --no-ri --no-rdoc"
+RUN /bin/bash -l -c "gem install bddfire -v 1.9.7 --no-ri --no-rdoc"
 RUN /bin/bash -l -c "gem install cucumber --no-ri --no-rdoc"
 RUN /bin/bash -l -c "gem install capybara --no-ri --no-rdoc"
 RUN /bin/bash -l -c "gem install poltergeist --no-ri --no-rdoc"
 RUN /bin/bash -l -c "gem install rspec --no-ri --no-rdoc"
 RUN /bin/bash -l -c "gem install appium_lib --no-ri --no-rdoc"
+RUN /bin/bash -l -c "bddfire fire_cucumber"
+RUN /bin/bash -l -c "cd cucumber&&bundle install"
 
 #Install maven
 RUN apt-get install -y maven
